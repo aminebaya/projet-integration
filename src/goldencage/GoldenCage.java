@@ -19,6 +19,7 @@ public class GoldenCage {
         // TODO code application logic here
         int c;
         String conflit;
+        int conflit1;
     }
     
 }
