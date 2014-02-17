@@ -20,7 +20,6 @@ public class GoldenCage {
         int c;
         String conflit;
         int conflit1;
-                
     }
     
 }
