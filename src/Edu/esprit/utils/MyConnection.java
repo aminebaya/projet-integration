@@ -1,4 +1,4 @@
-package edu.esprit.util;
+package edu.esprit.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

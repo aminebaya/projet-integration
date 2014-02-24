@@ -7,7 +7,7 @@
 package Edu.esprit.DAO;
 
 import Edu.esprit.Entities.Administrateur;
-import edu.esprit.util.MyConnection;
+import edu.esprit.utils.MyConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
