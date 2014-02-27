@@ -1,43 +1,71 @@
-package edu.esprit.utils;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Edu.esprit.utils;
 
 /**
  *
- * @author Karray
+ * @author NADER
  */
-public class MyConnection {
-
-   private static final  String driver = "com.mysql.jdbc.Driver";
-   private static final  String url = "jdbc:mysql://localhost:3306/goldencage";
-   private static final  String login = "root";
-   private static final  String pwd = "esprit";
-   private static Connection con;
 
 
-   private MyConnection(){
 
-   }
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-   public Connection etablirConnection(){
+public class MyConnection { //la meme classe on va la rendre singleton
+    private static final  String driver = "com.mysql.jdbc.Driver";
+    private static String url = "jdbc:mysql://localhost:3306/baya";
+    private static String login="root";
+    private static String pwd="esprit";
+   
+    public static Connection connection;
+    private static MyConnection instance;
+    
+    MyConnection con;
+public static Statement st;
+public static ResultSet rs;
+static MyConnection  CON;
+    
+
+    public MyConnection(){
         try {
-            Class.forName(driver);
-            con = DriverManager.getConnection(url,login,pwd);
-            System.out.println("Connexion établie");
-        } catch (ClassNotFoundException ex) {
-            System.out.println("Erreur de chargement de driver"+ex.getMessage());
-        } catch (SQLException ex){
-            System.out.println("probleme d'etablissement de connection"+ex.getMessage());
-        }
+            try {
+                //charger le pilote mysql en memoire
+                Class.forName("com.mysql.jdbc.Driver");
+                System.out.println("load driver OK");
+                //tester la connexion
+                connection = DriverManager.getConnection(url, login, pwd);
+                System.out.println("connect to database OK");
 
-        return con;
+
+            } catch (ClassNotFoundException ex) {
+                System.out.println("load driver FAIL");
+                Logger.getLogger(MyConnection.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Connection conn = DriverManager.getConnection(url, login, pwd);
+        } catch (SQLException ex) {
+            System.out.println("connect to database FAIL");
+            Logger.getLogger(MyConnection.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-   public static Connection getInstance(){
-       if (con==null){
-           new MyConnection().etablirConnection();
-       }
-   return con;
-   }
+
+    public static Connection getConnection() {
+        return connection;
+    }
+
+    public static MyConnection getInstance() {
+        if(instance==null)
+        {
+            instance=new MyConnection();
+        }
+       
+        return instance;
+    }
+
+    public PreparedStatement prepareStatement(String requete) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

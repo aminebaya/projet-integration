@@ -1,30 +1,43 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Edu.esprit.Entities;
 
-import java.util.Date;
-import java.util.List;
-import javax.annotation.Generated;
+/**
+ *
+ * @author baya
+ */
+public class Objet {
 
-public class Client extends User {
+    String login;
+    String password;
+    String nom;
+    String prenom;
+    String adresse;
+    String email;
+  
+  
 
-    private String login;
-    private String password;
-    private String nom;
-    private String prenom;
-    private String adresse;
-    private String email;
-    private int id; 
+    public Objet(String login, String password, String nom, String prenom, String adresse, String email) {
 
-    public int getId() {
-        return id;
+        this.login = login;
+        this.password = password;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.email=email;
+   
+
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Objet() {
+        
     }
-    
-    
 
-    
+   
+   
 
     public String getlogin() {
         return login;
@@ -46,12 +59,9 @@ public class Client extends User {
         return adresse;
     }
 
-    public String getemail() {
-        return email;
-    }
+    
 
-   
-
+    
     public void setlogin(String login) {
         this.login = login;
     }
@@ -73,11 +83,16 @@ public class Client extends User {
         this.adresse = adresse;
     }
 
-   
-
-    public void setemail(String Email) {
+    public void setemail(String email) {
         this.email = email;
     }
 
+    public String getemail() {
+        return email;
+    }
+
+    
    
+
+    
 }

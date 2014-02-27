@@ -7,7 +7,7 @@
 package Edu.esprit.DAO;
 
 import Edu.esprit.Entities.Administrateur;
-import edu.esprit.utils.MyConnection;
+import Edu.esprit.utils.MyConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +16,7 @@ import java.sql.SQLException;
  *
  * @author Elyes
  */
-public class AdministrateurDAO {
+public class AdmineDAO {
     
     public Administrateur findAdminByLogin(String login){
     

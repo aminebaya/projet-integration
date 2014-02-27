@@ -6,9 +6,9 @@
 
 package Edu.esprit.GUI;
 
-import Edu.esprit.DAO.AdministrateurDAO;
+import Edu.esprit.DAO.AdmineDAO;
 import Edu.esprit.Entities.Administrateur;
-
+import Edu.esprit.Entities.Objet;
 /**
  *
  * @author Touch media
@@ -100,7 +100,7 @@ public class Authentification extends javax.swing.JFrame {
     }//GEN-LAST:event_txtf_loginActionPerformed
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        AdministrateurDAO adminDAO = new AdministrateurDAO();
+        AdmineDAO adminDAO = new AdmineDAO();
         Administrateur admin = new Administrateur();
         admin=adminDAO.findAdminByLogin(txtf_login.getText());
         if(admin==null){
