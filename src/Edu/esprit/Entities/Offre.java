@@ -98,6 +98,14 @@ public class Offre {
         this.nomPrest = nomPrest;
     }
 
+    public Offre(String libelle_off, boolean stat_offre, float prix, Date date_Post, String nomPrest) {
+        this.libelle_off = libelle_off;
+        this.stat_offre = stat_offre;
+        this.prix = prix;
+        this.date_Post = date_Post;
+        this.nomPrest = nomPrest;
+    }
+
     public Offre() {
     }
     

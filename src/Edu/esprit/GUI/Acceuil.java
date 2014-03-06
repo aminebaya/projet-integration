@@ -627,18 +627,21 @@ public class Acceuil extends javax.swing.JFrame {
         if(table_prest.getSelectedRow()!=-1){
             btn_supp_prest.setEnabled(true);
         }
+        PrestDAO.upateTablePrest(table_prest);
     }//GEN-LAST:event_table_prestMouseClicked
 
     private void table_clientsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_clientsMouseClicked
          if(table_clients.getSelectedRow()!=-1){
             btn_supp_client.setEnabled(true);
         }
+         ClientDAO.upateTableClient(table_clients);
     }//GEN-LAST:event_table_clientsMouseClicked
 
     private void table_adminsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_adminsMouseClicked
         if(table_admins.getSelectedRow()!=-1){
             btn_supp_admin.setEnabled(true);
         }
+        AdministrateurDAO.upateTableAdmins(table_admins);
     }//GEN-LAST:event_table_adminsMouseClicked
 
     private void btn_add_offreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_add_offreActionPerformed
